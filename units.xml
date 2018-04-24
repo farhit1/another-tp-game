@@ -1,0 +1,16 @@
+<units>
+    <unit>
+        <name>Soldier</name>
+        <health>100</health>
+        <attack>10</attack>
+        <defence>20</defence>
+        <cost>400</cost>
+    </unit>
+    <unit>
+        <name>Archer</name>
+        <health>120</health>
+        <attack>30</attack>
+        <defence>10</defence>
+        <cost>750</cost>
+    </unit>
+</units>
