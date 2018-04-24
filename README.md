@@ -17,7 +17,7 @@
 ### Действия
 Добавьте новое действие в `moves.cpp`:
 ```c++
-struct NewSquad : Move {
+struct NewAction : Move {
     // Парсер токена, сообщающий может ли это действие обработать приходящий запрос
     // Описание структуры токена доступно в Token.h
     bool parse(const Token& token) override;
@@ -35,7 +35,7 @@ struct NewSquad : Move {
     static const Move::Signal signal = ...;
 };
 // Добавление действия в список доступных действий
-Execute::MoveAdder newSquadMove(new NewSquad());
+Execute::MoveAdder newActionMove(new NewAction());
 ```
 
 ## Скриншоты
