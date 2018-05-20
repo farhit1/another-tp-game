@@ -37,5 +37,3 @@ struct NewAction : Move {
 Execute::MoveAdder emptyTokenMove(std::unique_ptr<EmptyToken>(new EmptyToken()));
 ```
 
-## Скриншоты
- - [ ] *Добавить скриншоты*
