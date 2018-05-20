@@ -1,0 +1,4 @@
+<factors>
+    <factor name="factory" cost=100 bonus=10 />
+    <factor name="mill" cost=50 bonus=1 />
+</factors>

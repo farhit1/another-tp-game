@@ -5,4 +5,6 @@ int main() {
     Resource::get();
     ConsoleGame game({"England", "France"});
     game.launch();
+
+    return 0;
 }

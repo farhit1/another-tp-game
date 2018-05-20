@@ -18,7 +18,7 @@ class Unit {
     int _health;
 
 public:
-    Unit(UnitClass* unitClass, std::string&& name);
+    Unit(UnitClass* unitClass, std::string name);
 
     std::string info() const;
 

@@ -11,17 +11,30 @@
 
 // war entity
 class WarEntity {
+public:
     std::vector<Squad> _squads;
 
-public:
     WarEntity() = default;
     ~WarEntity() = default;
 
     bool alive() const;
 
-    void addSquad(std::string&& name);
+    void addSquad(std::string name);
 
-    bool findSquad(std::string&& name) const;
+    bool findSquad(const std::string& name) const;
+
+    std::string info() const {
+        std::string info;
+        if (_squads.empty())
+            info = "you have no squads";
+        else {
+            info = "your squads:\n";
+            for (const Squad &squad : _squads)
+                info += squad.info();
+            info.pop_back();
+        }
+        return info;
+    }
 };
 
 #endif //TP2_WARENTITY_H

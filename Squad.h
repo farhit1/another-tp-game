@@ -16,7 +16,7 @@ class Squad {
 public:
     const std::string _name;
 
-    explicit Squad(std::string&& name);
+    explicit Squad(std::string name);
 
     std::string info() const;
 
@@ -25,6 +25,10 @@ public:
     void recalc();
 
     void attack(Squad& other);
+
+    void addUnit(UnitClass* unitClass, std::string newUnitName) {
+        _units.push_back(Unit(unitClass, newUnitName));
+    }
 
     ~Squad() = default;
 };

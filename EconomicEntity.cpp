@@ -11,7 +11,7 @@ int EconomicEntity::getBonus() const {
     return totalBonus;
 }
 
-void EconomicEntity::addFactor(const Factor& factorClass) {
+void EconomicEntity::addFactor(FactorClass* factorClass) {
     _factors.emplace_back(factorClass);
 }
 

@@ -18,9 +18,7 @@ public:
 
     int getBonus() const;
 
-    void addFactor(const Factor& factorClass);
+    void addFactor(FactorClass* factorClass);
 };
-
-
 
 #endif //TP2_ECONOMYENTITY_H

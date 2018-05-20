@@ -19,16 +19,20 @@ struct DataTree {
 
         bool isLeaf() const;
 
-        std::string find(std::string&& s) const;
+        std::string find(std::string s) const;
     };
 
     Node root;
 };
 
-template<size_t extension = 0>
+enum class Extension {
+    XML
+};
+
+template<Extension = Extension::XML>
 DataTree GetTree(const char *filename);
 
-template<size_t extension>
+template<Extension = Extension::XML>
 DataTree PrintTree(const char *filename);
 
 #endif //TP2_DATATREE_H

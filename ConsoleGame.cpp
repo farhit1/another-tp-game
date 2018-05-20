@@ -8,5 +8,5 @@
 ConsoleGame::ConsoleGame(const std::vector<std::string>& names) :
         Game() {
     for (const std::string& name : names)
-        _players.push_back(new ConsolePlayer(name));
+        _players.push_back(new ConsolePlayer(name, this));
 }

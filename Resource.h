@@ -11,12 +11,12 @@
 #include "DataTree.h"
 
 class Resource {
-    Resource() = default;
-
+public:
     static std::vector<UnitClass> availableUnits;
     static std::vector<FactorClass> availableFactors;
 
-public:
+    static const int initialMoney = 2000;
+
     static void get();
 };
 

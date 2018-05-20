@@ -19,12 +19,13 @@ class Token {
 public:
     Player* owner;
 
-    Token() = delete;
-    explicit Token(Player* owner, std::string& tokenize);
+    Token() = default;
+
+    explicit Token(Player* owner, std::string tokenize);
 
     size_t size() const;
 
-    size_t find(std::string&& word) const;
+    size_t find(const std::string& word) const;
 
     bool isNumber(size_t pos) const;
 

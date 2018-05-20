@@ -4,9 +4,9 @@
 
 #include "Unit.h"
 
-Unit::Unit(UnitClass* unitClass, std::string&& name) :
+Unit::Unit(UnitClass* unitClass, std::string name) :
         _unitClass(unitClass),
-        _name(std::move(name)) {
+        _name(name) {
     _health = unitClass->health;
 }
 

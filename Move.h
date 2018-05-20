@@ -10,12 +10,14 @@
 
 struct Move {
     enum class Signal {
-        other, start, end, fail
+        other, start, end, not_found, exec_failed
     };
 
-    virtual bool parse(const Token& token) const = 0;
-    virtual void execute(Token& token) = 0;
-    static const Signal signal = Signal::other;
+    typedef std::pair<Signal, std::string> result;
+
+    virtual bool parse(const Token& token) = 0;
+    virtual void execute(const Token& token) = 0;
+    virtual Move::Signal signal() const = 0;
 };
 
 #endif //TP2_MOVE_H

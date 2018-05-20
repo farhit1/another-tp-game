@@ -20,19 +20,19 @@ namespace
     }
 
     template<typename ...Args>
-    size_t getMargin(size_t maxMargin, Args&&... args) {
+    size_t getMargin(size_t maxMargin, Args... args) {
         return maxMargin;
     }
     template<class S, class T, typename ...Args>
-    size_t getMargin(size_t maxMargin, std::pair<S, T> property, Args&&... args) {
+    size_t getMargin(size_t maxMargin, std::pair<S, T> property, Args... args) {
         maxMargin = std::max(maxMargin, to_string(property.first).length());
-        return getMargin(maxMargin, std::forward<Args>(args)...);
+        return getMargin(maxMargin, args...);
     }
 
     template<typename ...Args>
-    void print(std::string &s, size_t margin, Args&&... args) {}
+    void print(std::string &s, size_t margin, Args... args) {}
     template<class S, class T, typename ...Args>
-    void print(std::string &s, size_t margin, std::pair<S, T> property, Args&&... args) {
+    void print(std::string &s, size_t margin, std::pair<S, T> property, Args... args) {
         // <could be done better>
         std::string pf = to_string(property.first);
         s += pf + ":";
@@ -40,17 +40,17 @@ namespace
             s += ' ';
         s += to_string(property.second) + '\n';
         // </could be done better>
-        print(s, margin, std::forward<Args>(args)...);
+        print(s, margin, args...);
     }
 }
 
 template<typename ...Args>
-std::string pprint(Args&&... args) {
+std::string pprint(Args... args) {
     std::string s;
     print(
             s,
             getMargin(0, args...),
-            std::forward<Args>(args)...
+            args...
     );
     return s;
 }

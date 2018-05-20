@@ -4,17 +4,25 @@
 
 #include "Execute.h"
 
-std::vector<Move*> Execute::availableMoves = {};
+std::vector<std::unique_ptr<Move>> Execute::availableMoves = {};
 
-Execute::MoveAdder::MoveAdder(Move* move) {
-    availableMoves.push_back(move);
+Execute::MoveAdder::MoveAdder(std::unique_ptr<Move> move) {
+    availableMoves.push_back(std::move(move));
 }
 
-Move::Signal Execute::execute(Token&& token) {
-    for (auto& move : availableMoves)
+Move::result Execute::execute(const Token& token) {
+    for (const auto& move : availableMoves)
         if (move->parse(token)) {
-            move->execute(token);
-            return move->signal;
+            std::string message = "";
+            Move::Signal signal = move->signal();
+            try {
+                move->execute(token);
+            }
+            catch (Exception& exc) {
+                std::swap(exc.info, message);
+                signal = Move::Signal::exec_failed;
+            };
+            return std::make_pair(signal, std::move(message));
         }
-    return Move::Signal::fail;
+    return std::make_pair(Move::Signal::not_found, "");
 }

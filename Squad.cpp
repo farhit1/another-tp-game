@@ -5,13 +5,13 @@
 #include "Squad.h"
 #include <iostream>
 
-Squad::Squad(std::string&& name) :
-        _name(std::move(name)) {}
+Squad::Squad(std::string name) :
+        _name(name) {}
 
 std::string Squad::info() const {
-    std::string s = _name + "[\n";
+    std::string s = _name + " [";
     for (const Unit& unit : _units)
-        s += unit.info() + "\n";
+        s += '\n' + unit.info();
     s += "]\n";
     return s;
 }
@@ -35,7 +35,7 @@ void Squad::attack(Squad& other) {
     while (rounds-- > 0 && alive() && other.alive()) {
         size_t attackerId = rand() % _units.size();
         size_t attackedId = rand() % other._units.size();
-        _units[attackedId].attack(other._units[attackedId]);
+        _units[attackerId].attack(other._units[attackedId]);
         recalc();
         other.recalc();
     }

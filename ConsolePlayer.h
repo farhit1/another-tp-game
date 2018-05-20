@@ -14,7 +14,7 @@ class ConsolePlayer : public Player {
 
     Token get() const override;
 
-    void print(std::string&& message) const override;
+    void print(std::string message) const override;
 };
 
 #endif //TP2_CONSOLEPLAYER_H

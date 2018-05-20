@@ -7,19 +7,26 @@
 
 #include "Move.h"
 #include <vector>
+#include <exception>
 
 class Execute {
 public:
-    Execute() = default;
+    struct Exception : std::exception {
+        std::string info;
+        explicit Exception(const std::string& info) :
+                info(info) {}
+        explicit Exception(std::string&& info) :
+                info(std::move(info)) {}
+    };
 
-    static std::vector<Move*> availableMoves;
+    static std::vector<std::unique_ptr<Move>> availableMoves;
 
     struct MoveAdder {
         MoveAdder() = delete;
-        explicit MoveAdder(Move* move);
+        explicit MoveAdder(std::unique_ptr<Move> move);
     };
 
-    static Move::Signal execute(Token&& token);
+    static Move::result execute(const Token& token);
 };
 
 
