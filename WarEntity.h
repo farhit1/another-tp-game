@@ -23,18 +23,7 @@ public:
 
     bool findSquad(const std::string& name) const;
 
-    std::string info() const {
-        std::string info;
-        if (_squads.empty())
-            info = "you have no squads";
-        else {
-            info = "your squads:\n";
-            for (const Squad &squad : _squads)
-                info += squad.info();
-            info.pop_back();
-        }
-        return info;
-    }
+    std::string info() const;
 };
 
 #endif //TP2_WARENTITY_H

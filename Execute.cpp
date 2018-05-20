@@ -6,6 +6,9 @@
 
 std::vector<std::unique_ptr<Move>> Execute::availableMoves = {};
 
+Execute::Exception::Exception(std::string info) :
+        info(info) {}
+
 Execute::MoveAdder::MoveAdder(std::unique_ptr<Move> move) {
     availableMoves.push_back(std::move(move));
 }

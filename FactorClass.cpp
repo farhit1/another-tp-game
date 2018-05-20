@@ -4,8 +4,8 @@
 
 #include "FactorClass.h"
 
-FactorClass::FactorClass(std::string&& name, int cost, int bonus) :
-        name(std::move(name)),
+FactorClass::FactorClass(std::string name, int cost, int bonus) :
+        name(name),
         cost(cost),
         bonus(bonus) {}
 

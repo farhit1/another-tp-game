@@ -14,7 +14,7 @@ public:
     const int cost;
     const int bonus;
 
-    FactorClass(std::string&& name, int cost, int bonus);
+    FactorClass(std::string name, int cost, int bonus);
 
     std::string info() const;
 };

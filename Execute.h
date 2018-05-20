@@ -13,10 +13,7 @@ class Execute {
 public:
     struct Exception : std::exception {
         std::string info;
-        explicit Exception(const std::string& info) :
-                info(info) {}
-        explicit Exception(std::string&& info) :
-                info(std::move(info)) {}
+        explicit Exception(std::string info);
     };
 
     static std::vector<std::unique_ptr<Move>> availableMoves;

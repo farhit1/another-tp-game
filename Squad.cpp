@@ -40,3 +40,7 @@ void Squad::attack(Squad& other) {
         other.recalc();
     }
 }
+
+void Squad::addUnit(UnitClass* unitClass, std::string newUnitName) {
+    _units.push_back(Unit(unitClass, newUnitName));
+}

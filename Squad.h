@@ -26,9 +26,7 @@ public:
 
     void attack(Squad& other);
 
-    void addUnit(UnitClass* unitClass, std::string newUnitName) {
-        _units.push_back(Unit(unitClass, newUnitName));
-    }
+    void addUnit(UnitClass* unitClass, std::string newUnitName);
 
     ~Squad() = default;
 };

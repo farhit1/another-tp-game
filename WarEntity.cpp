@@ -18,3 +18,16 @@ bool WarEntity::findSquad(const std::string& name) const {
             return true;
     return false;
 }
+
+std::string WarEntity::info() const {
+    std::string info;
+    if (_squads.empty())
+        info = "you have no squads";
+    else {
+        info = "your squads:\n";
+        for (const Squad &squad : _squads)
+            info += squad.info();
+        info.pop_back();
+    }
+    return info;
+}
