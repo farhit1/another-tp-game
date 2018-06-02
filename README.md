@@ -25,7 +25,7 @@ struct NewAction : Move {
     bool parse(const Token& token) override {...}
 
     // Query handling
-    // Called if previous function returns true
+    // Called if previous function returned true
     void execute(const Token& token) override {...}
     
     // Type of action
@@ -38,7 +38,7 @@ Execute::MoveAdder emptyTokenMove(std::unique_ptr<EmptyToken>(new EmptyToken()))
 ```
 
 ## Architecture
-
+![Architecture](https://github.com/farhit1/mipt2-TPGame2/blob/master/architecture.png)
 
 
 ###### RUSSIAN
