@@ -1,8 +1,8 @@
 # TPGame2
 
-Language:
-[🇺🇸](https://github.com/farhit1/mipt2-TPGame2/blob/master/README.md#tpgame2-en)
-[🇷🇺](https://github.com/farhit1/mipt2-TPGame2/blob/master/README.md#tpgame2-ru)
+Choose language:
+[🇺🇸](#english)
+[🇷🇺](#russian)
 
 
 ###### ENGLISH
