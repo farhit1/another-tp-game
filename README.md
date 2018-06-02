@@ -1,10 +1,11 @@
 # TPGame2
 
-Select language:
+Language:
 [🇺🇸](https://github.com/farhit1/mipt2-TPGame2/blob/master/README.md#tpgame2-en)
 [🇷🇺](https://github.com/farhit1/mipt2-TPGame2/blob/master/README.md#tpgame2-ru)
 
-[create an anchor](#anchors-in-markdown)
+
+###### ENGLISH
 
 ## Description
 There are several players, each of those has it's economic and war enitiy. Goal - kill all the enemy squads.
@@ -40,7 +41,7 @@ Execute::MoveAdder emptyTokenMove(std::unique_ptr<EmptyToken>(new EmptyToken()))
 
 
 
-# TPGame2
+###### RUSSIAN
 
 ## Описание
 Есть несколько игроков. У каждого из них есть военная и экономическая сущности. Цель – убить все военные отряды соперников.
