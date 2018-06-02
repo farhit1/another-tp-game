@@ -1,8 +1,8 @@
 # TPGame2
 
 Choose language:
-[🇺🇸](#english)
-[🇷🇺](#russian)
+[🇺🇸](#english-top)
+[🇷🇺](#russian-top)
 
 
 ###### ENGLISH [TOP](#tpgame2)
